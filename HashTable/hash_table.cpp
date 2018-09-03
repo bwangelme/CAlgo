@@ -4,5 +4,8 @@
 
 #include "hash_table.h"
 
-HashTable InitTable(int tableSize) {
+namespace HashTable {
+    HashTable InitTable(int tableSize) {
+        return NULL;
+    }
 }

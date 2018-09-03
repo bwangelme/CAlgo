@@ -10,6 +10,7 @@ link_directories(${gtest_SOURCE_DIR})
 add_executable(CAlgo main.cpp
         HashTable/hash_table.h
         HashTable/hash_table.cpp
+        HashTable/hash_table_unittest.cpp
         TestSample/sample1.cpp
         TestSample/sample1.h
         TestSample/sample1_unittest.cpp)
