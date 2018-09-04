@@ -10,8 +10,9 @@ namespace HashTable {
         HashTable t = InitTable(7);
 
         EXPECT_EQ(t->tableSize, 7);
-        for (int i = 0; i < 7; i ++) {
-            EXPECT_EQ(NULL, t->lists[0]->next);
+        for (int i = 0; i < t->tableSize; i++) {
+            EXPECT_EQ(nullptr, t->lists[0]->next);
+            EXPECT_EQ(0, t->lists[0]->key);
         }
     }
 }

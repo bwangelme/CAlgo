@@ -26,6 +26,8 @@ namespace HashTable {
     /*
      * Internal func
      */
+    int nextPrime(int n);
+    bool isPrime(int n);
 
     /*
      * Internal MACRO
