@@ -6,7 +6,7 @@
 #include "hash_table.h"
 
 namespace HashTable {
-    TEST(InitTable, expectTableSize) {
+    TEST(HashTable, InitTable) {
         HashTable t = InitTable(7);
 
         EXPECT_EQ(t->tableSize, 7);

@@ -6,6 +6,8 @@
 #define CALGO_HASH_TABLE_H
 
 #include <cstdio>
+#include <cmath>
+#include <cstdlib>
 
 namespace HashTable {
     struct ListNode;
@@ -14,11 +16,25 @@ namespace HashTable {
     typedef struct HashTbl *HashTable;
     typedef int ElementType;
 
+    /* Export Interface */
     HashTable InitTable(int tableSize);
     void DestoryTable(HashTable h);
     Position Find(ElementType key, HashTable h);
     void Insert(ElementType key, HashTable h);
     ElementType Retrieve(Position p);
+
+    /*
+     * Internal func
+     */
+
+    /*
+     * Internal MACRO
+     */
+
+    #define FATLN(msg) \
+     fprintf(stderr, "error: %s:%d:%s ", __FILE__, __LINE__, __func__); \
+     fprintf(stderr, "%s", msg); \
+     exit(-1);
 
     struct ListNode {
         ElementType key;

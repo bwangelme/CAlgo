@@ -6,6 +6,10 @@
 
 namespace HashTable {
     HashTable InitTable(int tableSize) {
-        return NULL;
+        HashTable t = (HashTable)malloc(sizeof(struct HashTbl));
+        if (t == NULL) {
+            FATLN("malloc failed");
+        }
+        return t;
     }
 }
