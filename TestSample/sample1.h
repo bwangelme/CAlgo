@@ -5,6 +5,9 @@
 #ifndef CALGO_TESTSAMPLE_SAMPLE1
 #define CALGO_TESTSAMPLE_SAMPLE1
 
+#include <cstdio>
+#include <cmath>
+
 namespace TestSample {
     bool IsPrime(int n);
     int Factorial(int n);
