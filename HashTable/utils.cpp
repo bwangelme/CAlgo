@@ -63,9 +63,4 @@ namespace HashTable {
         EXPECT_EQ(2, nextPrime(-1));
         EXPECT_EQ(2, nextPrime(0));
     }
-
-    void fatln(const char *message) {
-        fprintf(stderr, message);
-        exit(-1);
-    }
 }

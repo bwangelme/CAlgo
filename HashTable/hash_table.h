@@ -19,8 +19,8 @@ namespace HashTable {
     /* Export Interface */
     HashTable InitTable(int tableSize);
     void DestoryTable(HashTable h);
-    Position Find(ElementType key, HashTable h);
-    void Insert(ElementType key, HashTable h);
+    void Insert(HashTable t, ElementType key);
+    Position Find (HashTable t, ElementType key);
     ElementType Retrieve(Position p);
 
     /*

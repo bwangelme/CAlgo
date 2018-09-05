@@ -15,4 +15,16 @@ namespace HashTable {
             EXPECT_EQ(0, t->lists[0]->key);
         }
     }
+
+    TEST(HashTable, InsertTable) {
+        HashTable t = InitTable(11);
+        ElementType key = 23;
+        Position node;
+
+        Insert(t, key);
+        node = Find(t, key);
+        EXPECT_NE(nullptr, node);
+        EXPECT_EQ(key, node->key);
+        EXPECT_EQ(nullptr, node->next);
+    }
 }
