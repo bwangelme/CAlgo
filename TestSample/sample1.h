@@ -9,8 +9,9 @@
 #include <cmath>
 
 namespace TestSample {
-    bool IsPrime(int n);
-    int Factorial(int n);
+bool IsPrime(int n);
+
+int Factorial(int n);
 }
 
 #endif

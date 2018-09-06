@@ -10,45 +10,52 @@
 #include <cstdlib>
 
 namespace HashTable {
-    struct ListNode;
-    typedef struct ListNode *Position;
-    struct HashTbl;
-    typedef struct HashTbl *HashTable;
-    typedef int ElementType;
 
-    /* Export Interface */
-    HashTable InitTable(int tableSize);
-    void DestoryTable(HashTable h);
-    void Insert(HashTable t, ElementType key);
-    Position Find (HashTable t, ElementType key);
-    ElementType Retrieve(Position p);
+struct ListNode;
+typedef struct ListNode *Position;
+struct HashTbl;
+typedef struct HashTbl *HashTable;
+typedef int ElementType;
 
-    /*
-     * Internal func
-     */
-    int nextPrime(int n);
-    bool isPrime(int n);
+/* Export Interface */
+HashTable InitTable(int tableSize);
 
-    /*
-     * Internal MACRO
-     */
+void DestoryTable(HashTable h);
 
-    #define FATLN(msg) \
+void Insert(HashTable t, ElementType key);
+
+Position Find(HashTable t, ElementType key);
+
+ElementType Retrieve(Position p);
+
+/*
+ * Internal func
+ */
+int nextPrime(int n);
+
+bool isPrime(int n);
+
+/*
+ * Internal MACRO
+ */
+
+#define FATLN(msg) \
      fprintf(stderr, "error: %s:%d:%s ", __FILE__, __LINE__, __func__); \
      fprintf(stderr, "%s", msg); \
      exit(-1);
 
-    struct ListNode {
-        ElementType key;
-        Position next;
-    };
+struct ListNode {
+    ElementType key;
+    Position next;
+};
 
-    typedef Position List;
+typedef Position List;
 
-    struct HashTbl {
-        List *lists;
-        int tableSize;
-    };
+struct HashTbl {
+    List *lists;
+    int tableSize;
+};
+
 }
 
 #endif //CALGO_HASH_TABLE_H

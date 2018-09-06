@@ -13,6 +13,6 @@ add_executable(CAlgo main.cpp
         HashTable/hash_table_unittest.cpp
         TestSample/sample1.cpp
         TestSample/sample1.h
-        TestSample/sample1_unittest.cpp HashTable/utils.cpp)
+        TestSample/sample1_unittest.cpp HashTable/utils.cpp TestSample/sample2.cpp TestSample/sample2.h TestSample/sample2_unittest.cpp)
 
 target_link_libraries(CAlgo gtest pthread)
