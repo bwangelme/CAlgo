@@ -29,4 +29,26 @@ TEST(HashTable, InsertTable) {
     EXPECT_EQ(nullptr, node->next);
 }
 
+TEST(HashTable, DestoryTable) {
+    HashTable  t = InitTable(11);
+    Position node;
+
+    Insert(t, 23);
+    Insert(t, 45);
+    DestoryTable(t);
+
+    node = Find(t, 23);
+    EXPECT_EQ(node, nullptr);
+}
+
+TEST(HashTable, Retrieve) {
+    HashTable  t = InitTable(11);
+    Position node;
+    ElementType key = 23;
+
+    Insert(t, key);
+    node = Find(t, key);
+    EXPECT_EQ(Retrieve(node), key);
+}
+
 }

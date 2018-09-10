@@ -19,26 +19,20 @@ typedef int ElementType;
 
 /* Export Interface */
 HashTable InitTable(int tableSize);
-
-void DestoryTable(HashTable h);
-
+void DestoryTable(HashTable &t);
 void Insert(HashTable t, ElementType key);
-
 Position Find(HashTable t, ElementType key);
-
 ElementType Retrieve(Position p);
 
 /*
  * Internal func
  */
 int nextPrime(int n);
-
 bool isPrime(int n);
 
 /*
  * Internal MACRO
  */
-
 #define FATLN(msg) \
      fprintf(stderr, "error: %s:%d:%s ", __FILE__, __LINE__, __func__); \
      fprintf(stderr, "%s", msg); \

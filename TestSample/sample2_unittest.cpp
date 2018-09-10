@@ -49,4 +49,3 @@ TEST(MyString, Set) {
 }
 
 }
-

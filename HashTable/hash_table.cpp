@@ -79,4 +79,34 @@ void Insert(HashTable t, ElementType key) {
     }
 }
 
+void DestoryTable(HashTable &t) {
+    if (t == nullptr) {
+        return;
+    }
+
+    List l;
+    Position delNode, pos;
+    for (int i = 0; i < t->tableSize; i++) {
+        l = t->lists[i];
+        pos = l;
+
+        while(pos != nullptr) {
+            delNode = pos;
+            pos = pos->next;
+            free(delNode);
+        }
+    }
+
+    free(t);
+    t = nullptr;
+}
+
+ElementType Retrieve(Position p) {
+    if(p == nullptr) {
+        return ElementType(NULL);
+    }
+
+    return p->key;
+}
+
 }
