@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <cmath>
 #include <cstdlib>
+#include "utils.h"
 
 namespace HashTable {
 
@@ -15,7 +16,6 @@ struct ListNode;
 typedef struct ListNode *Position;
 struct HashTbl;
 typedef struct HashTbl *HashTable;
-typedef int ElementType;
 
 /* Export Interface */
 HashTable InitTable(int tableSize);
