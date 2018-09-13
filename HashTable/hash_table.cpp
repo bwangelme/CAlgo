@@ -6,10 +6,6 @@
 
 namespace HashTable {
 
-int hash(ElementType x, int tableSize) {
-    return x % tableSize;
-}
-
 HashTable InitTable(int tableSize) {
     auto t = (HashTable) malloc(sizeof(struct HashTbl));
     if (t == nullptr) {

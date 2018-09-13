@@ -6,10 +6,11 @@
 #define CALGO_HASH_QUAD_H
 
 #include "utils.h"
+#include <cstdio>
+#include <cstdlib>
 
 namespace HashTable {
 
-typedef unsigned int Index;
 typedef Index Position;
 
 struct HashQuadEntry;
@@ -21,6 +22,9 @@ typedef struct HashQuadEntry Cell;
  *  Exported API
  */
 HashQuadTable InitQuadTable(int tableSize);
+void Insert(ElementType key, HashQuadTable t);
+Position Find(ElementType key, HashQuadTable t);
+#define MinTableSize 2
 
 
 enum KindOfEntry {
@@ -29,7 +33,7 @@ enum KindOfEntry {
 
 struct HashQuadEntry {
     ElementType elem;
-    enum KindOfEntry entry;
+    enum KindOfEntry info;
 };
 
 struct HashQuadTbl {
