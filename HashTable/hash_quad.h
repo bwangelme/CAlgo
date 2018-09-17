@@ -24,7 +24,10 @@ typedef struct HashQuadEntry Cell;
 HashQuadTable InitQuadTable(int tableSize);
 void Insert(ElementType key, HashQuadTable t);
 Position Find(ElementType key, HashQuadTable t);
-#define MinTableSize 2
+void Delete(ElementType key, HashQuadTable t);
+void DestroyTable(HashQuadTable t);
+ElementType Retrieve(Position p, HashQuadTable t);
+#define MinTableSize 100
 
 
 enum KindOfEntry {

@@ -8,8 +8,8 @@
 namespace HashTable{
 
 TEST(HashQuadTable, Init) {
-    int tableSize = 7;
-    HashQuadTable t = InitQuadTable(7);
+    int tableSize = 101;
+    HashQuadTable t = InitQuadTable(tableSize);
 
     EXPECT_EQ(t->tableSize, tableSize);
     for (int i = 0; i < tableSize; i++) {
@@ -18,12 +18,12 @@ TEST(HashQuadTable, Init) {
 }
 
 TEST(HashQuadTable, InitFailed) {
-    HashQuadTable t = InitQuadTable(1);
+    HashQuadTable t = InitQuadTable(28);
     EXPECT_EQ(nullptr, t);
 }
 
 TEST(HashQuadTable, Insert) {
-    HashQuadTable t = InitQuadTable(8);
+    HashQuadTable t = InitQuadTable(101);
     Position p;
     ElementType key = 7;
 
@@ -35,12 +35,43 @@ TEST(HashQuadTable, Insert) {
 }
 
 TEST(HashQuadTable, Find) {
-    HashQuadTable t = InitQuadTable(8);
+    HashQuadTable t = InitQuadTable(101);
     Position p;
     ElementType key = 7;
 
     p = Find(key, t);
     EXPECT_EQ(t->theCells[p].info, Empty);
+}
+
+
+TEST(HashQuadTable, Delete) {
+    HashQuadTable t = InitQuadTable(101);
+    Position p;
+    ElementType key = 7;
+
+    Insert(key, t);
+    Delete(key, t);
+
+    p = Find(key, t);
+
+    EXPECT_EQ(t->theCells[p].info, Empty);
+}
+
+
+TEST(HashQuadTable, Retrieve) {
+    HashQuadTable t = InitQuadTable(101);
+    Position p;
+    ElementType key = 7;
+
+    Insert(key, t);
+    p = Find(key, t);
+    EXPECT_EQ(key, Retrieve(p, t));
+}
+
+
+TEST(HashQuadTable, DestroyTable) {
+    HashQuadTable t = InitQuadTable(101);
+    DestroyTable(t);
 }
 
 }

@@ -40,6 +40,7 @@ Position Find(ElementType key, HashQuadTable t) {
 
     currentPosition = hash(key, t->tableSize);
     // 寻找空的位置或者符合key的Entry
+    // Note: 防止被删除过的元素被找到，要先检查是否为空，再检查key是否相等
     while(t->theCells[currentPosition].info != Empty &&
             t->theCells[currentPosition].elem != key) {
         // p = p + 2 * c -1
@@ -61,6 +62,28 @@ void Insert(ElementType key, HashQuadTable t) {
         t->theCells[p].info = Legitimate;
         t->theCells[p].elem = key;
     }
+}
+
+void Delete(ElementType key, HashQuadTable t) {
+    Position p;
+
+    p = Find(key, t);
+    if (t->theCells[p].info != Empty) {
+        t->theCells[p].info = Empty;
+    }
+}
+
+void DestroyTable(HashQuadTable t) {
+    free(t->theCells);
+    free(t);
+}
+
+ElementType Retrieve(Position p, HashQuadTable t) {
+    if (t->theCells[p].info == Legitimate) {
+        return t->theCells[p].elem;
+    }
+
+    return ElementType(NULL);
 }
 
 }
