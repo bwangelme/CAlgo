@@ -21,6 +21,7 @@ HashQuadTable InitQuadTable(int tableSize) {
     }
 
     t->tableSize = nextPrime(tableSize);
+    t->len = 0;
     t->theCells = (Cell *)malloc(sizeof(HashQuadEntry) * t->tableSize);
 
     if (t->theCells == nullptr) {
@@ -32,6 +33,23 @@ HashQuadTable InitQuadTable(int tableSize) {
     }
 
     return t;
+}
+
+void Rehash(HashQuadTable t) {
+    HashQuadTable newTable = InitQuadTable(t->tableSize * 2);
+
+    for(int i = 0; i < t->tableSize; i++) {
+        if (t->theCells[i].info != Legitimate) {
+            continue;
+        }
+        Insert(t->theCells[i].elem, newTable);
+    }
+
+    free(t->theCells);
+    t->theCells = newTable->theCells;
+    t->tableSize = newTable->tableSize;
+    free(newTable);
+
 }
 
 Position Find(ElementType key, HashQuadTable t) {
@@ -57,11 +75,17 @@ Position Find(ElementType key, HashQuadTable t) {
 void Insert(ElementType key, HashQuadTable t) {
     Position p;
 
+    if (t->len >= 0.7 * t->tableSize) {
+        Rehash(t);
+    }
+
     p = Find(key, t);
     if (t->theCells[p].info != Legitimate) {
         t->theCells[p].info = Legitimate;
         t->theCells[p].elem = key;
     }
+
+    t->len++;
 }
 
 void Delete(ElementType key, HashQuadTable t) {
@@ -71,6 +95,8 @@ void Delete(ElementType key, HashQuadTable t) {
     if (t->theCells[p].info != Empty) {
         t->theCells[p].info = Empty;
     }
+
+    t->len--;
 }
 
 void DestroyTable(HashQuadTable t) {

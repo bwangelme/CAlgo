@@ -74,4 +74,17 @@ TEST(HashQuadTable, DestroyTable) {
     DestroyTable(t);
 }
 
+TEST(HashQuadTable, Rehash) {
+    HashQuadTable t = InitQuadTable(MinTableSize);
+
+    for (int i = 0; i < MinTableSize + 10; i++) {
+        Insert(i, t);
+    }
+
+    EXPECT_EQ(t->len, MinTableSize + 10);
+    EXPECT_EQ(Find(MinTableSize, t), MinTableSize);
+
+    DestroyTable(t);
+}
+
 }

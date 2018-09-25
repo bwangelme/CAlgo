@@ -26,4 +26,19 @@ Index hash(ElementType x, int tableSize) {
 
     return Index (x % tableSize);
 }
+
+int nextPrime(int n) {
+    if (n <= 1) {
+        return 2;
+    }
+
+    while (true) {
+        if (isPrime(n)) {
+            return n;
+        } else {
+            n++;
+        }
+    }
+}
+
 }

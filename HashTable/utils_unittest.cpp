@@ -28,20 +28,6 @@ TEST(isPrimeTest, Positive) {
     EXPECT_TRUE(isPrime(23));
 }
 
-int nextPrime(int n) {
-    if (n <= 1) {
-        return 2;
-    }
-
-    while (true) {
-        if (isPrime(n)) {
-            return n;
-        } else {
-            n++;
-        }
-    }
-}
-
 TEST(nextPrimeTest, positive) {
     EXPECT_EQ(7, nextPrime(6));
     EXPECT_EQ(11, nextPrime(11));

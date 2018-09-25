@@ -27,7 +27,7 @@ Position Find(ElementType key, HashQuadTable t);
 void Delete(ElementType key, HashQuadTable t);
 void DestroyTable(HashQuadTable t);
 ElementType Retrieve(Position p, HashQuadTable t);
-#define MinTableSize 100
+#define MinTableSize 17
 
 
 enum KindOfEntry {
@@ -42,6 +42,7 @@ struct HashQuadEntry {
 struct HashQuadTbl {
     Cell *theCells;
     int tableSize;
+    int len;
 };
 
 }
