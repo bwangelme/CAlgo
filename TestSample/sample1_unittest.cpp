@@ -68,5 +68,9 @@ TEST(IsPrimeTest, Positive) {
     EXPECT_FALSE(IsPrime(6));
     EXPECT_TRUE(IsPrime(23));
 }
+
+TEST(IsPrimeTest, max) {
+    EXPECT_EQ(max(1, 2), 1);
+}
 }
 

@@ -12,6 +12,7 @@ namespace TestSample {
 bool IsPrime(int n);
 
 int Factorial(int n);
+max(int a, int b);
 }
 
 #endif
