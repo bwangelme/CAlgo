@@ -49,3 +49,33 @@ TEST(HeapStruct, Destroy) {
     Destroy(heap);
     EXPECT_EQ(nullptr, heap);
 }
+
+TEST(HeapStruct, Show) {
+    auto heap = Initialize(5);
+
+    Insert(heap, 10);
+    Insert(heap, 7);
+    Insert(heap, 2);
+    Insert(heap, 8);
+    Insert(heap, 4);
+
+    Show(heap, "", 1, false);
+    Destroy(heap);
+}
+
+TEST(HeapStruct, DeleteMin) {
+    auto heap = Initialize(5);
+
+    Insert(heap, 10);
+    Insert(heap, 7);
+    Insert(heap, 2);
+    Insert(heap, 8);
+    Insert(heap, 4);
+
+    DeleteMin(heap);
+
+    ElementType minElement = heap->elements[1], lastElement = heap->elements[heap->size];
+
+    EXPECT_EQ(minElement, 4);
+    EXPECT_EQ(lastElement, 10);
+}
