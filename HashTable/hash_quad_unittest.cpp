@@ -18,7 +18,7 @@ TEST(HashQuadTable, Init) {
 }
 
 TEST(HashQuadTable, InitFailed) {
-    HashQuadTable t = InitQuadTable(28);
+    HashQuadTable t = InitQuadTable(16);
     EXPECT_EQ(nullptr, t);
 }
 

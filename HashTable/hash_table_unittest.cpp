@@ -7,6 +7,7 @@
 
 namespace HashTable {
 
+
 TEST(HashTable, InitTable) {
     HashTable t = InitTable(7);
 
