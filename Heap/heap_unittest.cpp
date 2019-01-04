@@ -1,4 +1,4 @@
-#include "heap_struct.h"
+#include "heap.h"
 #include "gtest/gtest.h"
 
 TEST(HeapStruct, Initialize) {

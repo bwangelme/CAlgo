@@ -2,7 +2,7 @@
 // Created by michael tsui on 2019/1/2.
 //
 
-#include "heap_struct.h"
+#include "heap.h"
 
 PriorityQueue Initialize(int maxElements) {
     if (maxElements < MIN_PQ_SIZE) {
