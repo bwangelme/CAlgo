@@ -10,12 +10,8 @@
 
 namespace HashTable {
 
-typedef int ElementType;
 typedef unsigned int Index;
 
-/*
- * Internal func
- */
 int nextPrime(int n);
 bool isPrime(int n);
 Index hash(ElementType x, int tableSize);

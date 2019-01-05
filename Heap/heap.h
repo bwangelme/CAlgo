@@ -9,9 +9,10 @@
 #include <climits>
 #include "helper.h"
 
+namespace Heap {
+
 #define MIN_PQ_SIZE 1
 
-typedef int ElementType;
 typedef struct HeapStruct *PriorityQueue;
 
 /*
@@ -35,4 +36,7 @@ void Destroy(PriorityQueue &h);
 ElementType DeleteMin(PriorityQueue h);
 void Show(PriorityQueue h, const std::string &prefix = "", int node_index = 1, bool isLeft = false);
 
+}
+
 #endif //CALGO_HEAP_STRUCT_H
+

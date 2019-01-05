@@ -1,6 +1,8 @@
 #include "heap.h"
 #include "gtest/gtest.h"
 
+namespace Heap {
+
 TEST(HeapStruct, Initialize) {
     int maxElements = 20;
     auto heap = Initialize(maxElements);
@@ -78,4 +80,6 @@ TEST(HeapStruct, DeleteMin) {
 
     EXPECT_EQ(minElement, 4);
     EXPECT_EQ(lastElement, 10);
+}
+
 }

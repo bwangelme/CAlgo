@@ -4,6 +4,8 @@
 
 #include "heap.h"
 
+namespace Heap {
+
 PriorityQueue Initialize(int maxElements) {
     if (maxElements < MIN_PQ_SIZE) {
         Error("maxElements too small");
@@ -118,4 +120,6 @@ void Show(PriorityQueue h, const std::string &prefix, int node_index, bool isLef
     if (right_index <= h->size) {
         Show(h, prefix + (isLeft ? "│  " : "   "), right_index, false);
     }
+}
+
 }

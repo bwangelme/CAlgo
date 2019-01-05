@@ -8,6 +8,8 @@
 #include <cstdlib>
 #include <cstdio>
 
+typedef int ElementType;
+
 /*
  * Internal MACRO
  */
