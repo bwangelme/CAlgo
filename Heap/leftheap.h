@@ -14,11 +14,11 @@ namespace Heap {
 
 typedef struct TreeNode *LeftPriorityQueue;
 
-LeftPriorityQueue Initialize(void);
+LeftPriorityQueue Initialize(LeftPriorityQueue h = nullptr);
 
 ElementType FindMin(LeftPriorityQueue H);
 
-bool isEmpty(LeftPriorityQueue H);
+bool IsEmpty(LeftPriorityQueue H);
 
 LeftPriorityQueue Merge(LeftPriorityQueue H1, LeftPriorityQueue H2);
 

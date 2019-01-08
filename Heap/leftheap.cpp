@@ -6,16 +6,16 @@
 
 namespace Heap {
 
-LeftPriorityQueue Initialize(void) {
+LeftPriorityQueue Initialize(LeftPriorityQueue h) {
     return nullptr;
 }
 
-bool isEmpty(LeftPriorityQueue H) {
+bool IsEmpty(LeftPriorityQueue H) {
     return H == nullptr;
 }
 
 LeftPriorityQueue Destroy1(LeftPriorityQueue H) {
-    if (isEmpty(H))
+    if (IsEmpty(H))
         return nullptr;
 
     Destroy(H->Right);
@@ -88,14 +88,14 @@ void Show(LeftPriorityQueue h, const std::string &prefix, bool isRight) {
 
     }
 
-    if (isEmpty(h)) {
+    if (IsEmpty(h)) {
         printf("{}\n");
         return;
     } else {
         printf("%d\n", h->Element);
     }
 
-    if (isEmpty(h->Left) && isEmpty(h->Right)) {
+    if (IsEmpty(h->Left) && IsEmpty(h->Right)) {
         return;
     }
 
@@ -104,7 +104,7 @@ void Show(LeftPriorityQueue h, const std::string &prefix, bool isRight) {
 }
 
 ElementType FindMin(LeftPriorityQueue h) {
-    if (isEmpty(h)) {
+    if (IsEmpty(h)) {
         Error("heap h is empty");
         return -1;
     }
@@ -115,7 +115,7 @@ ElementType FindMin(LeftPriorityQueue h) {
 LeftPriorityQueue DeleteMin1(LeftPriorityQueue heap) {
     LeftPriorityQueue leftHeap, rightHeap;
 
-    if (isEmpty(heap)) {
+    if (IsEmpty(heap)) {
         Error("heap is empty");
         return nullptr;
     }
