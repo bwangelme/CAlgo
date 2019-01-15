@@ -8,6 +8,6 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR} Include/)
 link_directories(${gtest_SOURCE_DIR})
 
 FILE(GLOB Sources main.cpp Heap/*.cpp HashTable/*.cpp TestSample/*.cpp)
-ADD_EXECUTABLE(CAlgo ${Sources})
+ADD_EXECUTABLE(CAlgo ${Sources} Heap/leftheap_api.h Heap/leftheap_utils.cpp Heap/leftheap_utils_unittest.cpp)
 
 target_link_libraries(CAlgo gtest pthread)
