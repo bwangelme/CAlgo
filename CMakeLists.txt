@@ -7,7 +7,7 @@ add_subdirectory(${gtest_SOURCE_DIR})
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR} Include/)
 link_directories(${gtest_SOURCE_DIR})
 
-FILE(GLOB Sources main.cpp Heap/*.cpp HashTable/*.cpp TestSample/*.cpp)
+FILE(GLOB Sources main.cpp Heap/*.cpp HashTable/*.cpp TestSample/*.cpp 2Analysis/*.cpp)
 ADD_EXECUTABLE(CAlgo ${Sources})
 
 target_link_libraries(CAlgo gtest pthread)

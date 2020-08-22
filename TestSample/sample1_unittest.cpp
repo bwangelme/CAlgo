@@ -70,7 +70,7 @@ TEST(IsPrimeTest, Positive) {
 }
 
 TEST(IsPrimeTest, max) {
-    EXPECT_EQ(max(1, 2), 1);
+    EXPECT_EQ(max(1, 2), 2);
 }
 }
 

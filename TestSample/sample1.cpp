@@ -33,7 +33,11 @@ int Factorial(int n) {
 }
 
 int max(int a, int b) {
-    return a;
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
 }
 
 }
