@@ -8,6 +8,7 @@
 namespace Analysis {
 
 int MaxSubsequenceSum3(const int A[], int N);
+int MaxSubsequenceSum4(const int A[], int N);
 int Max3(int a, int b, int c);
 
 }
